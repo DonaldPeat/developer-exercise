@@ -1,10 +1,14 @@
 class Exercise
-
-  # Assume that "str" is a sequence of words separated by spaces.
-  # Return a string in which every word in "str" that exceeds 4 characters is replaced with "marklar".
-  # If the word being replaced has a capital first letter, it should instead be replaced with "Marklar".
+  
+  # "str" is a sequence of words separated by spaces.
+  # Returns a string in which every word in "str" that exceeds 4 characters is replaced with "marklar".
+  # If the word being replaced has a capital first letter, it is replaced with "Marklar".
   def self.marklar(str)
-    # TODO: Implement this method
+    #globally substitute all capitalized words exceeding 4 charachters
+    str = str.gsub(/\b[A-Z][a-z]{5,}\b*/, "Marklar")
+    #globally substitute all non-capitalized words exceeding 4 characters 
+    str = str.gsub(/\b[a-z]{5,}\b*/, "marklar") 
+    return str
   end
 
   # Return the sum of all even numbers in the Fibonacci sequence, up to
